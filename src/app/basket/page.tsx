@@ -35,7 +35,7 @@ export default function BasketPage() {
   const handlePayment = () => {
     if (!user) {
       toast({
-        title: "Authentication Required",
+        title: "Authentication Required!",
         description: "Please log in to proceed with payment.",
         variant: "destructive",
       });
