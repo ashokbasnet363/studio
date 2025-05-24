@@ -1,0 +1,92 @@
+
+import type { Product, Review } from '@/types';
+
+export const mockProducts: Product[] = [
+  {
+    id: '1',
+    name: 'Classic Leather Wallet',
+    price: 49.99,
+    description: 'A stylish and durable genuine leather wallet.',
+    longDescription: 'Crafted from premium full-grain leather, this classic bifold wallet offers ample space for cards and cash. Its timeless design ensures it never goes out of style, while its robust construction guarantees longevity. Perfect for everyday use or as a thoughtful gift.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Accessories',
+    stock: 150,
+    rating: 4.5,
+    numReviews: 65,
+  },
+  {
+    id: '2',
+    name: 'Wireless Bluetooth Headphones',
+    price: 89.99,
+    description: 'Immersive sound quality with long battery life.',
+    longDescription: 'Experience crystal-clear audio and deep bass with these over-ear wireless Bluetooth headphones. Enjoy up to 20 hours of playtime on a single charge. Features comfortable earcups, intuitive controls, and a built-in microphone for calls.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Electronics',
+    stock: 75,
+    rating: 4.2,
+    numReviews: 120,
+  },
+  {
+    id: '3',
+    name: 'Organic Cotton T-Shirt',
+    price: 24.99,
+    description: 'Soft and breathable, perfect for everyday wear.',
+    longDescription: 'Made from 100% certified organic cotton, this t-shirt is incredibly soft, breathable, and gentle on your skin. Its classic fit and durable stitching make it a versatile staple for any wardrobe. Available in various colors.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Apparel',
+    stock: 200,
+    rating: 4.8,
+    numReviews: 210,
+  },
+  {
+    id: '4',
+    name: 'Stainless Steel Water Bottle',
+    price: 19.99,
+    description: 'Eco-friendly and keeps drinks cold for 24 hours.',
+    longDescription: 'Stay hydrated on the go with this sleek stainless steel water bottle. Double-walled insulation keeps your beverages cold for up to 24 hours or hot for 12 hours. Leak-proof and BPA-free, its a sustainable choice for your daily hydration needs.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Home & Kitchen',
+    stock: 300,
+    rating: 4.6,
+    numReviews: 150,
+  },
+  {
+    id: '5',
+    name: 'Yoga Mat Premium',
+    price: 39.99,
+    description: 'Non-slip, extra-thick mat for comfort and support.',
+    longDescription: 'Enhance your yoga practice with this premium, non-slip yoga mat. Its extra-thick cushioning provides excellent support and comfort for your joints. Made from eco-friendly materials, it includes a carrying strap for easy transport.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Sports & Outdoors',
+    stock: 120,
+    rating: 4.7,
+    numReviews: 90,
+  },
+  {
+    id: '6',
+    name: 'Artisan Coffee Beans',
+    price: 15.99,
+    description: 'Freshly roasted whole beans, rich aroma.',
+    longDescription: 'Savor the rich aroma and complex flavors of these artisan coffee beans. Sourced from sustainable farms and freshly roasted in small batches, these whole beans are perfect for brewing your favorite cup of coffee, whether its espresso, pour-over, or French press.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Groceries',
+    stock: 80,
+    rating: 4.9,
+    numReviews: 180,
+  },
+];
+
+export const mockReviews: Review[] = [
+  { id: 'r1', productId: '1', userId: 'u1', userName: 'Alice', rating: 5, comment: 'Excellent quality and beautiful design!', date: '2023-05-10' },
+  { id: 'r2', productId: '1', userId: 'u2', userName: 'Bob', rating: 4, comment: 'Very good wallet, spacious.', date: '2023-05-12' },
+  { id: 'r3', productId: '2', userId: 'u3', userName: 'Charlie', rating: 5, comment: 'Sound is amazing, and they are very comfortable.', date: '2023-04-20' },
+  { id: 'r4', productId: '2', userId: 'u4', userName: 'Diana', rating: 3, comment: 'Battery life could be better for the price.', date: '2023-04-22' },
+  { id: 'r5', productId: '3', userId: 'u1', userName: 'Alice', rating: 5, comment: 'So soft and fits perfectly!', date: '2023-06-01' },
+  { id: 'r6', productId: '3', userId: 'u5', userName: 'Eve', rating: 4, comment: 'Good quality cotton, holds up well after washing.', date: '2023-06-05' },
+  { id: 'r7', productId: '4', userId: 'u2', userName: 'Bob', rating: 5, comment: 'Keeps my water cold all day long. Love it!', date: '2023-03-15' },
+  { id: 'r8', productId: '5', userId: 'u6', userName: 'Frank', rating: 4, comment: 'Great mat, good grip.', date: '2023-07-01' },
+  { id: 'r9', productId: '6', userId: 'u7', userName: 'Grace', rating: 5, comment: 'Best coffee beans I have ever tried!', date: '2023-07-10' },
+];
+
+export const getProductById = (id: string): Product | undefined => mockProducts.find(p => p.id === id);
+export const getReviewsByProductId = (productId: string): Review[] => mockReviews.filter(r => r.productId === productId);
